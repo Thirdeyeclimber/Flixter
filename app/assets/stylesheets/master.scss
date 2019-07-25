@@ -1,20 +1,58 @@
 @import "bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Fascinate&display=swap");
-@import url("https://fonts.googleapis.com/css?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Londrina+Shadow&display=swap");
 
 
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	color: white;
+}
 
 .navbar {
 	background: image_url('prism.png');
   box-shadow: 1px 2px 4px #2a2a2a;
-  margin-bottom: 0;
+  margin: 0;
   color: white;		/* Why isn't this working?? - Changed bootstrap navbar to dark version*/
 }
 
 .navbar-brand {
-	font-family: 'Fascinate', cursive;
+	font-family: 'Londrina Shadow', cursive;
 	font-size: 50px;
 	color: grey;	  /* Why isn't this working?? Bootstrap interference? */
+	letter-spacing: 5px;
+}
+
+.hero {
+	background: image_url('hero.jpg') no-repeat center center fixed;
+	height: 370px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.frosty {
+ background: rgba(0,0,0,0.5);
+ color: white;
+}
+
+.frosty h1 {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+  letter-spacing: 2px;
+}
+
+.frosty h2, h6 {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 200;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.btn {
+	border-radius: 0;
 }
 
 body {
