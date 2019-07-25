@@ -1,2 +1,23 @@
 @import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Fascinate&display=swap");
+@import url("https://fonts.googleapis.com/css?family=NTR&display=swap");
 
+
+
+.navbar {
+	background: image_url('prism.png');
+  box-shadow: 1px 2px 4px #2a2a2a;
+  margin-bottom: 0;
+  color: white;		/* Why isn't this working?? - Changed bootstrap navbar to dark version*/
+}
+
+.navbar-brand {
+	font-family: 'Fascinate', cursive;
+	font-size: 50px;
+	color: grey;	  /* Why isn't this working?? Bootstrap interference? */
+}
+
+body {
+	font-family: 'NTR', sans-serif;
+	background: image_url('shattered.png');
+}
