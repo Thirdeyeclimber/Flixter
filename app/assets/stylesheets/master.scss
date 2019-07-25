@@ -9,6 +9,11 @@ h1, h2, h3, h4, h5, h6 {
 	color: white;
 }
 
+body {
+	font-family: 'NTR', sans-serif;
+	background: image_url('shattered.png');
+}
+
 .navbar {
 	background: image_url('prism.png');
   box-shadow: 1px 2px 4px #2a2a2a;
@@ -55,7 +60,8 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 0;
 }
 
-body {
-	font-family: 'NTR', sans-serif;
-	background: image_url('shattered.png');
+.feature {
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
