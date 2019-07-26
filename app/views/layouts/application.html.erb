@@ -22,12 +22,54 @@
             <a class="nav-link" href="#">See All Courses</a>
           </li>
         </ul>
+        <ul class="navbar-nav">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'My Profile', "#", class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+            </li>
+          <% end %>
+        </ul>
      </div>
     </nav>
+
+    <!-- Alerts for Devise -->
+    <% if notice.present? %>
+      <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
     <div>
       <%= yield %>
     </div>
+
+        <!-- line to separate body from footer -->
+    <hr> 
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class ="col-12">
+            <div class="footer-blurb float-right">
+              Built by <a href="https://twitter.com/Thirdeyeclimber">Michael</a><br />
+              with help from <a href="https://www.trilogyed.com/">Trilogy</a><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
 
   </body>
 </html>
