@@ -3,6 +3,10 @@
 <div class="booyah-box col-10 offset-1">
   <h1><%= @course.title %></h1>
   <br />
+
+  <%= image_tag @course.image_url, class: 'img-fluid' %>
+
+  <br>
   <div class="row">
     <div class="col-sm-4 col-12 text-center">
       <span class="badge badge-default">
@@ -20,8 +24,9 @@
       <%= @course.description %>
     </div>
   </div>
-
-  <div class="col-12">
+  <br>
+  <br>
+  <div class="col-8 offset-2">
     <% @course.sections.each do |section| %>
       <div class="section">
         <%= section.title %>
@@ -37,4 +42,5 @@
      </div>
     <% end %>
   </div>
+  <br>
 </div>

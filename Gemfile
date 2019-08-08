@@ -34,12 +34,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Michael's additions!
-
 gem 'popper_js'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+gem 'figaro'
+gem 'fog-aws'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
