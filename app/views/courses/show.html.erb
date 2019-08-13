@@ -1,22 +1,23 @@
 <br />
 
 <div class="booyah-box col-10 offset-1">
-  <h1><%= @course.title %></h1>
+  <h1 class="text-center"><%= @course.title %></h1>
   <br />
 
   <%= image_tag @course.image_url, class: 'img-fluid' %>
 
   <br>
+  <br>
   <div class="row">
-    <div class="col-sm-4 col-12 text-center">
-      <span class="badge badge-default">
+    <div class="col-sm-4 col-12 text-right">
+      <span class="badge badge-success">
         <%= number_to_currency @course.cost %>
       </span>
 
       <% if current_user && current_user == @course.user %>
         <br />
         <br />
-        <%= link_to 'Admin', instructor_course_path(@course), class: 'btn btn-danger btn-large' %>
+        <%= link_to 'Edit Course', instructor_course_path(@course), class: 'btn btn-warning btn-large' %>
       <% end %>
     </div>
 
@@ -26,21 +27,24 @@
   </div>
   <br>
   <br>
-  <div class="col-8 offset-2">
+
+  <div class="col-12">
     <% @course.sections.each do |section| %>
       <div class="section">
-        <%= section.title %>
+        <b><%= section.title %></b>
         <% section.lessons.each do |lesson| %>
           <div class="lesson">
             <%= link_to lesson_path(lesson) do %>
               <b><%= lesson.title %></b>
-              -
-              <%= lesson.subtitle %>
             <% end %>
+              -
+            <%= lesson.subtitle %>
           </div>
+          <br>
         <% end %>
-     </div>
+      </div>
     <% end %>
   </div>
   <br>
+
 </div>

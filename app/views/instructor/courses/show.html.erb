@@ -2,15 +2,17 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= current_course.title %></h1>
  	
- 	<%= image_tag @course.image_url, class: 'img-fluid' %>
+ 	<%= image_tag current_course.image_url, class: 'img-fluid' %>
 
  	<br />
- 	<%= link_to 'Student view', course_path(current_course), class: 'btn btn-warning float-right' %>
+ 	<%= link_to 'Preview as Student', course_path(current_course), class: 'btn btn-warning float-right' %>
   <br class="clr" />
-
+  <br>
  	<div class="text-center">
- 		<%= link_to 'Add Section', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
+ 		<%= link_to 'Add Section', new_instructor_course_section_path(current_course), class: 'btn btn-success btn-lg' %>
  	</div>
+ 	<br class="clr" />
+ 	<br>
  	<ul>
  		<% current_course.sections.each do |section| %>
  			<li>

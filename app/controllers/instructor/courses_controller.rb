@@ -16,7 +16,6 @@ class Instructor::CoursesController < ApplicationController
 	end
 
 	def show
-		@course = current_course
 	end
 
 	private
