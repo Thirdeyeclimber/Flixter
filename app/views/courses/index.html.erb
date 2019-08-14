@@ -10,9 +10,11 @@
 		</h2>
 		<br />
 
-		<%= image_tag course.image, class: "img-fluid" %>
+		<% if course.image_url.present? %>
+    	<%= image_tag course.image_url, class: 'img-fluid' %>
+		<% end %>
 
-		<br>
+		<br><br>
 		<div class="row">
 			<div class="col-sm-8 col-12">
 				<% course.description %>
@@ -22,5 +24,6 @@
 			</div>
 		</div>
 		<br class="clr" />
+		<hr>
 	<% end %>
 </div>
