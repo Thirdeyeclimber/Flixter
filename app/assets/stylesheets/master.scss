@@ -30,7 +30,7 @@ body {
 }
 
 .hero {
-	background: image_url('hero.jpg') no-repeat center center fixed;
+	background: image_url('x-N4QTBfNQ8Nk-unsplash.jpg') no-repeat center center fixed;
 	height: 370px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -101,4 +101,28 @@ body {
 
 .clr {
 	clear: both;
+}
+
+.lesson {
+  background-color: black;
+  margin-top: 10px;
+  height: 130px;
+}
+
+.lesson a {
+  color: white;
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.lesson a b {
+  font-weight: 100;
+  font-size: 25px;
+}
+
+.section {
+	border: 1px solid;
+	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+	padding: 20px;
 }
