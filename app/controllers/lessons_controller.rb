@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+	
 	def show
 		@lesson = current_lesson
 	end
