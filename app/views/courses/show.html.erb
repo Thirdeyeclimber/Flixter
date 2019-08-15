@@ -1,33 +1,58 @@
-<br />
+<!-- Space -->
+<br>
 
+
+<!-- Main Display Div -->
 <div class="booyah-box col-10 offset-1">
+  
+  <!-- Course Title -->
   <h1 class="text-center"><%= @course.title %></h1>
   <br />
-
- <%= image_tag @course.image_url, class: 'img-fluid' %>
-
+  
+  <!-- Image Display -->
+  <%= image_tag @course.image_url, class: 'img-fluid' %>
   <br>
   <br>
+
+  <!-- Bootstrap Layout Div -->
   <div class="row">
     <div class="col-sm-4 col-12 text-right">
+      
+      <!-- Display Cost -->
       <span class="badge badge-success">
         <%= number_to_currency @course.cost %>
       </span>
-
+      
+      <!-- Display 'Edit Course' button if currently logged-in user and creator of the course -->
       <% if current_user && current_user == @course.user %>
         <br />
         <br />
         <%= link_to 'Edit Course', instructor_course_path(@course), class: 'btn btn-warning btn-large' %>
       <% end %>
+
+      <!-- Space -->
+      <br>
+      <br>
+      
+      <!-- Display 'Enroll' button if not enrolled, otherwise display enrollment message -->
+      <% if current_user && current_user.enrolled_in?(@course) %>
+        <h3 class="badge badge-info">You're Enrolled!</h3>
+      <% else %>
+        <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-success', method: :post %>
+      <% end %>
     </div>
 
+    <!-- Course Description -->
     <div class="col-sm-8 col-12">
       <%= @course.description %>
     </div>
   </div>
+  
+   <!-- Space -->
   <br>
   <br>
-
+  
+  <!-- Sections and Lessons Display -->
   <div class="col-12">
     <% @course.sections.each do |section| %>
     <br /><br />
@@ -53,4 +78,5 @@
       </div>
     <% end %>
   </div>
+
 </div>
