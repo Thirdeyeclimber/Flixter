@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Michael's additions!
+# Developer's Gem additions - Michael
 gem 'popper_js'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
@@ -44,7 +44,10 @@ gem 'figaro'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'carrierwave-aws'
+# For payment feature
 gem 'stripe'
+# To enable ordering of lessons with drag/drop feature
+gem 'ranked-model'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
