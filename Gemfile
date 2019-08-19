@@ -35,19 +35,31 @@ gem 'jbuilder', '~> 2.5'
 
 # Developer's Gem additions - Michael
 gem 'popper_js'
+# For better looking features
 gem 'bootstrap', '~> 4.3.1'
+# Jquery library for rails
 gem 'jquery-rails'
+# Easy made Forms
 gem 'simple_form'
+# For user authentication
 gem 'devise'
+# Photo and Video upload feature
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+# For privacy of API keys
 gem 'figaro'
+# For amazon cloud file locations for photos and videos
 gem 'fog-aws'
+# For resizing an image
 gem 'mini_magick'
+
 gem 'carrierwave-aws'
 # For payment feature
 gem 'stripe'
-# To enable ordering of lessons with drag/drop feature
+# To enable ordering of lessons
 gem 'ranked-model'
+#  Drag/Drop lesson feature for teachers
+gem 'jquery-ui-rails'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
