@@ -59,6 +59,8 @@ gem 'stripe'
 gem 'ranked-model'
 #  Drag/Drop lesson feature for teachers
 gem 'jquery-ui-rails'
+# Awesome Font for Cool Icons
+gem 'font-awesome-rails'
 
 
 # Reduces boot times through caching; required in config/boot.rb
