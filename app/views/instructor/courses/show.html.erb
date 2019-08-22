@@ -32,7 +32,7 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= current_course.title %></h1>
  	
- 	<%= image_tag current_course.image_url, class: 'img-fluid' %>
+ 	<%= image_tag current_course.image_url, class: 'img-fluid img-thumbnail' %>
 
  	<br /><br />
  	<%= link_to course_path(current_course), class: 'btn btn-warning float-right' do %>
@@ -42,9 +42,9 @@
   <br class="clr" />
   <br>
  	<div class="text-center">
- 		<%= link_to new_instructor_course_section_path(current_course), class: 'btn btn-success btn-lg' do %>
+ 		<%= link_to new_instructor_course_section_path(current_course), class: 'float-right btn btn-success btn-lg' do %>
 	 		Add Section
-	 		<i class="fa fa-plus-circle"></i>
+	 		<i class="glyphicon glyphicon-plus-sign"></i>
  		<% end -%>
  	</div>
  	<br class="clr" />
@@ -75,6 +75,7 @@
 		 							<p>
 		 								<b><%= lesson.title %></b>
 		 							</p>
+		 							<hr class="lessons">
 		 							<p>
 		 								<%= lesson.subtitle %>
 		 							</p>
