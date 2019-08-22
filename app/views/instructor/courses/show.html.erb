@@ -1,3 +1,4 @@
+<!-- Sortable lessons js script -->
 <script>
 	$(function() {
 		$('.lessons').sortable({
@@ -13,6 +14,7 @@
 	});
 </script>
 
+<!-- Sortable sections js script -->
 <script>
 	$(function() {
 		$('.sections').sortable({
@@ -29,26 +31,27 @@
 </script>
 
 <br />
+<!-- Main Display Div -->
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= current_course.title %></h1>
- 	
  	<%= image_tag current_course.image_url, class: 'img-fluid img-thumbnail' %>
-
- 	<br /><br />
+	<br class="clr" /><br>
+ 	
+ 	<!-- View Student Page -->
  	<%= link_to course_path(current_course), class: 'btn btn-warning float-right' do %>
-	 	Preview as Student
+	 	Student Preview
 	 	<i class="fa fa-eye fa-lg"></i>
  	<% end -%>
-  <br class="clr" />
-  <br>
- 	<div class="text-center">
- 		<%= link_to new_instructor_course_section_path(current_course), class: 'float-right btn btn-success btn-lg' do %>
-	 		Add Section
-	 		<i class="glyphicon glyphicon-plus-sign"></i>
- 		<% end -%>
- 	</div>
- 	<br class="clr" />
+  <br class="clr" /><br>
  	
+ 	<!-- New Section Button (trigger modal) -->
+ 	<div class="text-center">
+		<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#newSectionModal">
+		  New Section <i class="fa fa-plus-circle fa-lg"></i>
+		</button>
+ 	</div>
+ 	
+ 	<!-- Display Sections -->
  	<ul class="sections">
  		<% current_course.sections.rank(:row_order).each do |section| %>
  			<li data-update-url="<%= instructor_section_path section %>" class="section-li">
@@ -63,6 +66,7 @@
 	 			<br class="clr" />
 				<br class="clr" />
  				
+ 				<!-- Display lessons -->
  				<ul class="lessons">
  					<% section.lessons.rank(:row_order).each do |lesson| %>
  						<li data-update-url="<%= instructor_lesson_path lesson %>">
@@ -89,6 +93,27 @@
  			</li>
  		<% end %>
  	</ul>
-
 </div>
 
+
+<!-- New Section Modal -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+        <h4 class="modal-title" id="newSectionModalLabel">Add a new section</h4>
+      </div>
+    <%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
+      <div class="modal-body">
+					<%= f.input :title %>
+			</div>
+      <div class="modal-footer">
+        <%= f.submit "Submit", class: 'btn btn-success' %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
