@@ -88,17 +88,20 @@
             <br>
             <a href="https://khanacademy.com">Khan Academy</a>
           </div>
-          <div class="col-12 col-sm-3 text-center">
+          <div class="col-12 col-sm-3 text-center social">
+            <b>Contact</b>
+            <br>
             <b>Developer</b>
             <br>
-            <a href="https://www.linkedin.com/in/webdev10100">LinkedIn</a>
-            <span class="fa fa-linkedin-square fa-lg"></span>
-            <br>
-            <a href="https://twitter.com/Thirdeyeclimber">Twitter</a>
-            <span class="fa fa-twitter-square fa-lg"></span>
-            <br>
-            <a href="https://github.com/Thirdeyeclimber">Github</a>
-            <span class="fa fa-github-square fa-lg"></span>
+            <%= link_to 'http://github.com/Thirdeyeclimber', target: :_blank do %>
+              <span class="fa fa-github-square fa-2x social-button"></span>
+            <% end %>
+            <%= link_to 'https://www.linkedin.com/in/webdev10100/', target: :_blank do %>
+              <span class="fa fa-linkedin-square fa-2x"></span>
+            <% end %>
+            <%= link_to 'https://twitter.com/Thirdeyeclimber', target: :_blank do %>
+              <span class="fa fa-twitter-square fa-2x"></span>
+            <% end %>
           </div>
         </div>
       </div>
