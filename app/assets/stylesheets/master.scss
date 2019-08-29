@@ -135,7 +135,12 @@ body {
 .lessons hr {
   border-top: 3px solid grey;
   width: 40%;
+}
 
+hr {
+  border-top: 3px solid grey;
+  width: 80%;
+  border-radius: 10px;
 }
 
 .lessons li {

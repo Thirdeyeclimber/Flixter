@@ -2,9 +2,18 @@
 
 <div class="booyah-box col-10 offset-1">
 	<h1><%= current_lesson.title %></h1>
+  <hr class="col-8 offset-2 video">
 	<p class="float-left">
 		<%= current_lesson.subtitle %>
 	</p>
+    <!-- Next Lesson Button  -->
+  <br>
+  <% if current_lesson.next_lesson.present? %>
+    <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-success float-right' do %>
+    Next Lesson &nbsp;
+    <span class="fa fa-forward"></span>
+    <% end %>
+  <% end %>
 
   <br class="clr"><br>
 
@@ -18,15 +27,5 @@
       </p>
     </noscript>
   </video>
-
-  <!-- Next Lesson Button  -->
-  <br>
-  <% if current_lesson.next_lesson.present? %>
-    <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-success float-right' do %>
-    Next Lesson &nbsp;
-    <span class="fa fa-forward"></span>
-    <% end %>
-  <% end %>
   <br class="clr">
-
 </div>
