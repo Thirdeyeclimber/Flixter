@@ -44,40 +44,65 @@
               </li>
             <% end %>
           </ul>
-       </div>
+        </div>
       </nav>
-
-      <!-- Alerts for Devise -->
-      <% if notice.present? %>
-        <p class="alert alert-info"><%= notice %></p>
-      <% end %>
-      <% if alert.present? %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-
-      <!-- Render View -->
-      <%= yield %>
     </div>
+
+    <!-- Alerts for Devise -->
+    <% if notice.present? %>
+      <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <!-- Render View -->
+    <%= yield %>
 
     <!-- Flexbox Footer-->
     <div id="footer">
       <div class="container">
-        <div class="container text-center text-md-left">
-          <b>Instructors</b>
-          <br />
-          <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <div class="row">
+          <div class="col-12 col-sm-3 text-center">
+            <b>Teachers</b>
+            <br>
+            <%= link_to 'My Dashboard', dashboard_path %>
+            <br>
+            <%= link_to 'Create Course', new_instructor_course_path %>
+          </div>
+          <div class="col-12 col-sm-3 text-center">
+            <b>Students</b>
+            <br>
+            <%= link_to 'My Courses', dashboard_path %>
+            <br>
+            <%= link_to 'Last Lesson', '#' %>
+            <br>
+            <%= link_to 'Student Handbook', '#' %>
+          </div>
+          <div class="col-12 col-sm-3 text-center">
+            <b>Resources</b>
+            <br>
+            <a href="https://google.com">Google</a>
+            <br>
+            <a href="https://codeschool.com">Code School</a>
+            <br>
+            <a href="https://khanacademy.com">Khan Academy</a>
+          </div>
+          <div class="col-12 col-sm-3 text-center">
+            <b>Developer</b>
+            <br>
+            <a href="https://www.linkedin.com/in/webdev10100">LinkedIn</a>
+            <span class="fa fa-linkedin-square fa-lg"></span>
+            <br>
+            <a href="https://twitter.com/Thirdeyeclimber">Twitter</a>
+            <span class="fa fa-twitter-square fa-lg"></span>
+            <br>
+            <a href="https://github.com/Thirdeyeclimber">Github</a>
+            <span class="fa fa-github-square fa-lg"></span>
+          </div>
         </div>
-
-        <div class="container text-center text-md-right">
-          <b>
-          Built by <a href="https://twitter.com/Thirdeyeclimber">Michael</a><br />
-          with help from <a href="https://www.trilogyed.com/">Trilogy</a><br />
-          </b>
-        </div>
-        <br/>
       </div>
     </div>
-
-  <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
+    <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
   </body>
 </html>
