@@ -116,6 +116,17 @@ body {
   font-size: 15px;
 }
 
+/* visited link */
+.lesson a:visited {
+  color: lightgrey;
+}
+
+/* mouse over link */
+.lesson a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .lesson a b {
   font-weight: 100;
   font-size: 25px;
